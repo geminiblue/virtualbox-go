@@ -150,9 +150,9 @@ func (vb *VBox) VMInfo(uuidOrVmName string) (machine *VirtualMachine, err error)
 			vm.Spec.Group = "/" + elems[0]
 		}
 	}
-	if path != vb.getVMSettingsFile(vm) {
-		return nil, fmt.Errorf("path %s does not match expected structure", path)
-	}
+// 	if path != vb.getVMSettingsFile(vm) {
+// 		return nil, fmt.Errorf("path %s does not match expected structure", path)
+// 	}
 
 	vm.Spec.CPU.Count = m["cpus"].(int)
 	vm.Spec.Memory.SizeMB = m["memory"].(int)
